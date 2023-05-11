@@ -1,6 +1,5 @@
 var today = dayjs();
 $("#currentDay").text(today.format('MMM D, YYYY h:mm'));
-console.log(today.$H)
 var storageToDoArr9am = JSON.parse(localStorage.getItem('ToDos9am')) || [];
 var storageToDoArr10am = JSON.parse(localStorage.getItem('ToDos10am')) || [];
 var storageToDoArr11am = JSON.parse(localStorage.getItem('ToDos11am')) || [];
@@ -151,66 +150,104 @@ function displayStorage() {
 
   for (let i = 0; i < storageToDoArr9am.length; i++) {
     let toDo9 = document.createElement('li');
-    toDo9.textContent = storageToDoArr9am[i];
+    let toDo9Button = document.createElement('button');
+    toDo9Button.setAttribute("class", "searchAgain");
+    toDo9Button.setAttribute("type","button");
+    toDo9Button.textContent = storageToDoArr9am[i];
+    toDo9.append(toDo9Button);
     $('#toDos9').append(toDo9);
   }
 
   for (let i = 0; i < storageToDoArr10am.length; i++) {
     let toDo10 = document.createElement('li');
-    toDo10.textContent = storageToDoArr10am[i];
+    let toDo10Button = document.createElement('button');
+    toDo10Button.setAttribute("class", "searchAgain");
+    toDo10Button.setAttribute("type","button");
+    toDo10Button.textContent = storageToDoArr10am[i];
+    toDo10.append(toDo10Button);
     $('#toDos10').append(toDo10);
   }
 
   for (let i = 0; i < storageToDoArr11am.length; i++) {
     let toDo11 = document.createElement('li');
-    toDo11.textContent = storageToDoArr11am[i];
+    let toDo11Button = document.createElement('button');
+    toDo11Button.setAttribute("class", "searchAgain");
+    toDo11Button.setAttribute("type","button");
+    toDo11Button.textContent = storageToDoArr11am[i];
+    toDo11.append(toDo11Button);
     $('#toDos11').append(toDo11);
   }
 
   for (let i = 0; i < storageToDoArr12pm.length; i++) {
     let toDo12 = document.createElement('li');
-    toDo12.textContent = storageToDoArr12pm[i];
+    let toDo12Button = document.createElement('button');
+    toDo12Button.setAttribute("class", "searchAgain");
+    toDo12Button.setAttribute("type","button");
+    toDo12Button.textContent = storageToDoArr12pm[i];
+    toDo12.append(toDo12Button);
     $('#toDos12').append(toDo12);
   }
 
   for (let i = 0; i < storageToDoArr1pm.length; i++) {
     let toDo13 = document.createElement('li');
-    toDo13.textContent = storageToDoArr1pm[i];
+    let toDo13Button = document.createElement('button');
+    toDo13Button.setAttribute("class", "searchAgain");
+    toDo13Button.setAttribute("type","button");
+    toDo13Button.textContent = storageToDoArr1pm[i];
+    toDo13.append(toDo13Button);
     $('#toDos13').append(toDo13);
   }
 
   for (let i = 0; i < storageToDoArr2pm.length; i++) {
     let toDo14 = document.createElement('li');
-    toDo14.textContent = storageToDoArr2pm[i];
+    let toDo14Button = document.createElement('button');
+    toDo14Button.setAttribute("class", "searchAgain");
+    toDo14Button.setAttribute("type","button");
+    toDo14Button.textContent = storageToDoArr2pm[i];
+    toDo14.append(toDo14Button);
     $('#toDos14').append(toDo14);
   }
 
   for (let i = 0; i < storageToDoArr3pm.length; i++) {
     let toDo15 = document.createElement('li');
-    toDo15.textContent = storageToDoArr3pm[i];
+    let toDo15Button = document.createElement('button');
+    toDo15Button.setAttribute("class", "searchAgain");
+    toDo15Button.setAttribute("type","button");
+    toDo15Button.textContent = storageToDoArr3pm[i];
+    toDo15.append(toDo15Button);
     $('#toDos15').append(toDo15);
   }
 
   for (let i = 0; i < storageToDoArr4pm.length; i++) {
     let toDo16 = document.createElement('li');
-    toDo16.textContent = storageToDoArr4pm[i];
+    let toDo16Button = document.createElement('button');
+    toDo16Button.setAttribute("class", "searchAgain");
+    toDo16Button.setAttribute("type","button");
+    toDo16Button.textContent = storageToDoArr4pm[i];
+    toDo16.append(toDo16Button);
     $('#toDos16').append(toDo16);
   }
 
   for (let i = 0; i < storageToDoArr5pm.length; i++) {
     let toDo17 = document.createElement('li');
-    console.log(toDo17,"5")
-    toDo17.textContent = storageToDoArr5pm[i];
+    let toDo17Button = document.createElement('button');
+    toDo17Button.setAttribute("class", "searchAgain");
+    toDo17Button.setAttribute("type","button");
+    toDo17Button.textContent = storageToDoArr5pm[i];
+    toDo17.append(toDo17Button);
     $('#toDos17').append(toDo17);
   }
 
   for (let i = 0; i < storageToDoArr6pm.length; i++) {
     let toDo18 = document.createElement('li');
-    console.log('6',toDo18);
-    toDo18.textContent = storageToDoArr6pm[i];
-    console.log('6 next',toDo18);
+    let toDo18Button = document.createElement('button');
+    toDo18Button.setAttribute("class", "searchAgain");
+    toDo18Button.setAttribute("type","button");
+    toDo18Button.textContent = storageToDoArr6pm[i];
+    toDo18.append(toDo18Button);
     $('#toDos18').append(toDo18);
   }
+
 };
 
 $("#btn9").click(function () {
@@ -295,12 +332,17 @@ $("#btn17").click(function () {
 });
 
 $("#btn18").click(function () {
-  var toDo18Text = $("textarea#text18");
+  var toDo18Text = $("textarea#text18").val();
   storageToDoArr6pm.push(toDo18Text);
 
   localStorage.setItem('ToDos6pm', JSON.stringify(storageToDoArr6pm));
 
   displayStorage();
+});
+
+$(".searchAgain").click(function(){
+  var buttonValue = $("button.searchAgain").val(); 
+  console.log('button',buttonValue);
 });
 
 checkTime();
