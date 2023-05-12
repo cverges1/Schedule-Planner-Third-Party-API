@@ -13,8 +13,7 @@ Enter tasks at differnet hours on a given day. Press the save button to keep tas
 
 # Credits
 
-API used for application provided by OpenWeather
-https://openweathermap.org/
+University of Arizona provide starter HTML file.
 
 
 
