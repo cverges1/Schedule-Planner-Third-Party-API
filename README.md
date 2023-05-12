@@ -3,6 +3,10 @@
 # Description
 A calender to help a user keep track of tasks to be accomplished. Calendar will dynamically update throughout the day to let user know whether the time slot is in the past, present or future.
 
+https://github.com/cverges1/Schedule-Planner-Third-Party-API
+
+![ScreenShot](Untitled.jpg)
+
 # Installation
 
 N/A 
