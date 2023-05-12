@@ -340,10 +340,7 @@ $("#btn18").click(function () {
   displayStorage();
 });
 
-$(".searchAgain").click(function(){
-  var buttonValue = $("button.searchAgain").val(); 
-  console.log('button',buttonValue);
-});
+
 
 checkTime();
 displayStorage();
